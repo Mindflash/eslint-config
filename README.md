@@ -33,3 +33,10 @@ has a detailed explanation of the pros and cons associated with the rule, exampl
 linter will act, information about additional configuration, and links to additional information about the reasoning
 for the rule if applicable. The page for [semi colon usage](http://eslint.org/docs/rules/semi) is a great example of
 eslints approach to linting rules.
+
+
+## Contributing:
+If you would like to suggest a rule change please open a pull request and provide 3-5 business days for
+people to be able to respond to your pull request and provide feedback. Due to the controversial nature of
+some linting rules we need to allow people an opportunity to voice their opinions so that we end up with the
+linting rule set we want as a team. 
