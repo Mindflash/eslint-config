@@ -9,7 +9,7 @@ module.exports = {
 		'block-spacing': [2, 'always'],
 
 		// enforce brace style
-		'brace-style': [2, '1tbs', {'allowSingleLine': true}],
+		'brace-style': [2, '1tbs', {'allowSingleLine': false}],
 
 		// enforces camel case
 		'camelcase': 2,
@@ -51,7 +51,7 @@ module.exports = {
 		'id-length': [1, {'min': 2, 'max': 20, 'exceptions': ['_']}],
 
 		// enforce consistent indentation
-		'indent': [2, 'tab'],
+		'indent': [2, 'tab', {'SwitchCase': 1}],
 
 		// enforce consistent use of string quotation style with jsx attributes
 		'jsx-quotes': 0,
@@ -66,7 +66,7 @@ module.exports = {
 		'line-comment-position': [2, {'posistion': 'above'}],
 
 		// enforce consistent linebreak style
-		'linebreak-style': [1, 'unix'],
+		'linebreak-style': [2, 'unix'],
 
 		// enforce consistent spacing around comments
 		'lines-around-comment': [1,
