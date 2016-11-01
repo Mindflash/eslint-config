@@ -21,7 +21,7 @@ module.exports = {
 		'consistent-return': 1,
 
 		// require curly braces around blocks. i.e if, else, else if etc.
-		'curly': [2, 'multi-or-nest', 'consistent'],
+		'curly': [2, 'multi-line', 'consistent'],
 
 		// enforces the use of a default case in all switch statements
 		'default-case': 0,
