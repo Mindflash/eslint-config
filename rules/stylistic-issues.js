@@ -63,7 +63,7 @@ module.exports = {
 		'keyword-spacing': [2, {'before': true, 'after': true}],
 
 		// enforce consistent positioning of line comments
-		'line-comment-position': [2, {'posistion': 'above'}],
+		'line-comment-position': [2, {'position': 'above'}],
 
 		// enforce consistent linebreak style
 		'linebreak-style': [2, 'unix'],
@@ -259,12 +259,5 @@ module.exports = {
 
 		// require regex literals to be wrapped
 		'wrap-regex': 2
-
-
-
-
-
-
-
 	}
 }
