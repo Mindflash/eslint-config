@@ -84,14 +84,14 @@ module.exports = {
 		'max-depth': [2, {'max': 4}],
 
 		// enforce a maximum line length
-		// 'max-len': [2, {
-		// 	'code': 120,
-		// 	'ignoreUrls': true,
-		// 	'ignoreComments': true,
-		// 	'ignoreTrailingComments': true,
-		// 	'ignoreStrings': true,
-		// 	'ignoreTemplateLiterals': true
-		// }],
+		'max-len': [2, {
+			'code': 120,
+			'ignoreUrls': true,
+			'ignoreComments': true,
+			'ignoreTrailingComments': true,
+			'ignoreStrings': true,
+			'ignoreTemplateLiterals': true
+		}],
 
 		// enforce a maximum file length
 		'max-lines': [2, 200],
