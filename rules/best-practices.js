@@ -186,9 +186,9 @@ module.exports = {
 		'vars-on-top': 2,
 
 		// prevents hard to read equality checks
-		'yoda': [2, {"exceptRange": true}],
+		'yoda': [2, "never", {"exceptRange": true}],
 
 		// prevents this key word from being used outside of classes or class like objects
 		'no-invalid-this': 2
 	}
-}
+};
