@@ -84,7 +84,9 @@ module.exports = {
 		'max-depth': [2, {'max': 4}],
 
 		// enforce a maximum line length
-		'max-len': [2, 100, 4, {
+		'max-len': [2, {
+			'code': 120,
+			'tabWidth': 4,
 			'ignoreUrls': true,
 			'ignoreComments': true,
 			'ignoreTrailingComments': true,
