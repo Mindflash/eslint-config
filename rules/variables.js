@@ -24,7 +24,7 @@ module.exports = {
 		'no-shadow': 2,
 
 		// prevent initializing to undefined
-		'no-undefined-init': 1,
+		'no-undef-init': 1,
 
 		// prevent use of undeclared variables unless mentioned in a /* global */ comment
 		'no-undef': 2,

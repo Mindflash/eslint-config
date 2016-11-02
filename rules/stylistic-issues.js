@@ -24,7 +24,7 @@ module.exports = {
 		'comma-style': [2, 'last'],
 
 		// prevent space in computer properties
-		'computer-property-spacing': [2, 'never'],
+		'computed-property-spacing': [2, 'never'],
 
 		// enforce a consistent 'this' naming convention
 		'consistent-this': [2, 'self'],
@@ -48,7 +48,7 @@ module.exports = {
 		'id-blacklist': 0,
 
 		// enforce minimum and maximum identifier lengths
-		'id-length': [1, {'min': 2, 'max': 20, 'exceptions': ['_']}],
+		'id-length': [1, {'min': 2, 'max': 30, 'exceptions': ['_']}],
 
 		// enforce consistent indentation
 		'indent': [2, 'tab', {'SwitchCase': 1}],

@@ -78,7 +78,7 @@ module.exports = {
 		'no-fallthrough': 2,
 
 		// forces numbers to be written explicitly as floats i.e: 0.7 vs .7
-		'no-floating-decimals': 2,
+		'no-floating-decimal': 2,
 
 		// prevents assignment to native or read only globals
 		'no-global-assign': 2,
