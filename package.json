@@ -18,6 +18,6 @@
   "homepage": "https://github.com/Mindflash/eslint-config#readme",
   "peerDependencies": {
     "eslint": "^3.9.1",
-    "eslint-plugin-import": "^2.1.0",
+    "eslint-plugin-import": "^2.1.0"
   }
 }
