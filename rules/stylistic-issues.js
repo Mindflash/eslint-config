@@ -189,7 +189,7 @@ module.exports = {
 		'no-whitespace-before-property': 2,
 
 		// enforce consistent line breaks inside of braces
-		'object-curly-newline': [2, {'multiline': true}],
+		'object-curly-newline': 0,
 
 		// enforce consistent spacing inside braces
 		'object-curly-spacing': [2, 'never'],
