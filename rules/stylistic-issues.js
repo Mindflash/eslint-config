@@ -106,7 +106,7 @@ module.exports = {
 		'max-statements-per-line': [2, {'max': 1}],
 
 		// enforce max number of statements allowed in function body
-		'max-statements': [1, {'max': 5}],
+		'max-statements': [1, {'max': 10}],
 
 		// enforce consistent use of new lines with ternary expressions
 		'multiline-ternary': 0,
