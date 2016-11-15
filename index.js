@@ -19,4 +19,12 @@ module.exports = {
 		ecmaVersion: 6,
 		sourcetype: 'script'
 	}
+	settings: {
+		'import/resolver': {
+			node: {
+				extensions: ['.js', '.json']
+			}
+		}
+	},
+	plugins: ['import']
 };
