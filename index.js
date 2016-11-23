@@ -4,6 +4,7 @@ module.exports = {
 	extends: [
 		'./rules/best-practices',
 		'./rules/ecma-script6',
+		'./rules/imports',
 		'./rules/node',
 		'./rules/possible-errors',
 		'./rules/strict-mode',
