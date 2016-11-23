@@ -18,7 +18,7 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 6,
 		sourcetype: 'script'
-	}
+	},
 	settings: {
 		'import/resolver': {
 			node: {
