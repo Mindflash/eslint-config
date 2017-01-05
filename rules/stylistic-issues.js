@@ -192,10 +192,10 @@ module.exports = {
 		'object-curly-newline': 0,
 
 		// enforce consistent spacing inside braces
-		'object-curly-spacing': [2, 'never'],
+		'object-curly-spacing': [2, 'always'],
 
 		// enforce consistent property formatting
-		'object-property-newline': 2,
+		'object-property-newline': [2, {'allowMultiplePropertiesPerLine': true}],
 
 		// enforce consistent line use around variable declarations
 		'one-var-declaration-per-line': 2,
