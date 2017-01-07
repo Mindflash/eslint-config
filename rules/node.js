@@ -25,7 +25,7 @@ module.exports = {
 		'no-path-concat': 2,
 
 		// prevents process.env
-		'no-process-env': 1,
+		'no-process-env': 0,
 
 		// prevents process.exit
 		'no-process-exit': 1,
@@ -36,4 +36,4 @@ module.exports = {
 		// prevent synchronous methods
 		'no-sync': 2
 	}
-}
+};
