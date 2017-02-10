@@ -94,7 +94,7 @@ module.exports = {
 		}],
 
 		// enforce a maximum file length
-		'max-lines': [2, 200],
+		'max-lines': [1, 200],
 
 		// enforce max nested callbacks
 		'max-nested-callbacks': [2, {'max': 5}],
