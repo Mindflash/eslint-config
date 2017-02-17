@@ -39,7 +39,7 @@ module.exports = {
 		'no-extra-boolean-cast': 2,
 
 		// prevents unnecessary parentheses
-		'no-extra-parens': 2,
+		'no-extra-parens': 1,
 
 		// prevents extra semicolons
 		'no-extra-semi': 2,
