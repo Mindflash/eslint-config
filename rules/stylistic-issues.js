@@ -51,7 +51,7 @@ module.exports = {
 		'id-length': [1, {'min': 2, 'max': 30, 'exceptions': ['_']}],
 
 		// enforce consistent indentation
-		'indent': [2, 'tab', {'SwitchCase': 1, 'MemberExpression': 1}],
+		'indent': [2, 2, {'SwitchCase': 1, 'MemberExpression': 1}],
 
 		// enforce consistent use of string quotation style with jsx attributes
 		'jsx-quotes': 0,
