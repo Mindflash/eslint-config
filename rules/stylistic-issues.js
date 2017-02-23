@@ -203,8 +203,8 @@ module.exports = {
     // enforce consistent variable declaration style
     'one-var': [2, 'never'],
 
-    // prevent use of operator shorthand
-    'operator-assignment': [2, 'never'],
+    // disable enforcement of operator shorthand
+    'operator-assignment': 0,
 
     // enforce consistent linebreak style for operators
     'operator-linebreak': [2, 'after'],
