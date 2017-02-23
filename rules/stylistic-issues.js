@@ -142,7 +142,7 @@ module.exports = {
 		'no-lonely-if': 2,
 
 		// prevents the use of mixed logical operators with out parentheses
-		'no-mixed-operators': 2,
+		'no-mixed-operators': [2, {'allowSamePrecedence': true}],
 
 		// prevents mixed indentation style
 		'no-mixed-spaces-and-tabs': [2, 'smart-tabs'],
