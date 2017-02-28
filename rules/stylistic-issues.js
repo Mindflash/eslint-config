@@ -119,10 +119,10 @@ module.exports = {
     'new-parens': 2,
 
     // require empty an line after variable declaration
-    'newline-after-var': [2, 'always'],
+    'newline-after-var': 0,
 
     // enforce consistent spacing before return statements
-    'newline-before-return': 2,
+    'newline-before-return': 0,
 
     // require newline after each call in a method chain
     'newline-per-chained-call': [2, {'ignoreChainWithDepth': 2}],
