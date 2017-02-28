@@ -74,7 +74,8 @@ module.exports = {
         'beforeBlockComment': true,
         'afterBlockComment': false,
         'beforeLineComment': true,
-        'afterLineComment': false
+        'afterLineComment': false,
+        'allowBlockStart': true
       }],
 
     // enforce consistent spacing around directives
