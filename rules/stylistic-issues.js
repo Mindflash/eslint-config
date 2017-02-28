@@ -199,10 +199,10 @@ module.exports = {
     'object-property-newline': [2, {'allowMultiplePropertiesPerLine': true}],
 
     // enforce consistent line use around variable declarations
-    'one-var-declaration-per-line': 2,
+    'one-var-declaration-per-line': [2, "initializations"],
 
     // enforce consistent variable declaration style
-    'one-var': [2, 'never'],
+    'one-var': 0,
 
     // disable enforcement of operator shorthand
     'operator-assignment': 0,
