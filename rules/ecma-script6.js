@@ -10,7 +10,7 @@ module.exports = {
   },
   'rules': {
     // only use braces where necessary
-    'arrow-body-style': [2, 'as-needed'],
+    'arrow-body-style': [0],
 
     // require parens in arrow function arguments
     'arrow-parens': [2, 'as-needed'],
