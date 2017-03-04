@@ -39,10 +39,10 @@ module.exports = {
     'func-name-matching': 2,
 
     // require or disallow named function expressions
-    'func-names': 1,
+    'func-names': [1, 'as-needed'],
 
     // enforce use of function expressions or declarations
-    'func-style': [1, 'expression', {'allowArrowFunctions': true}],
+    'func-style': 0,
 
     // black list certain identifiers
     'id-blacklist': 0,
