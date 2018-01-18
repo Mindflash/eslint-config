@@ -15,7 +15,7 @@ module.exports = {
     'class-methods-use-this': 0,
 
     // specify the maximum cyclomatic complexity allowed in code base
-    'complexity': [2, 10],
+    'complexity': [2, 20],
 
     // requires functions to have a consistent return
     'consistent-return': 1,
