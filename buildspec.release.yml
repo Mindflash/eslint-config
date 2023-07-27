@@ -4,6 +4,7 @@
 #   - runs full test suite
 #   - runs build
 #   - Pushes package to private npm repo
+#   - changed from aws/codebuild/nodejs:8.11.0
 
 version: 0.2
 
