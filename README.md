@@ -1,42 +1,37 @@
-# eslint-config
-Golden Path linting rules for a brighter tomorrow.
+# @mindflash-ops/eslint-config
 
-Shared Mindflash Javascript [eslint](http://eslint.org) config
+Modern ESLint configuration for Node.js v22+ projects using ESLint v9's flat config system.
 
-### Add to an existing project
+## Features
 
-Add package:
-`npm install --save-dev git+ssh://git@github.com:Mindflash/eslint-config.git`
+- ESLint v9 flat config format
+- ECMAScript 2024 support
+- ESM modules support
+- Prettier integration
+- Modern JavaScript best practices
+- Node.js v22.14.0+ compatibility
 
-Add a .eslintrc file to the root of your project:
+## Installation
 
+```sh
+npm install --save-dev @mindflash-ops/eslint-config
 ```
-{
-	"extends": "mindflash"
-}
+
+## Usage
+
+Create an `eslint.config.js` file in your project root:
+
+```js
+import sharedConfig from '@mindflash-ops/eslint-config/eslint.config.js';
+export default [...sharedConfig];
 ```
 
-### Full workflow setup
-COMING SOON
+## Requirements
 
+- Node.js >= 22.14.0
+- ESLint >= 9.0.0
+- Prettier >= 3.2.0
 
-## A note on eslint:
-eslint is a very powerful tool that offers a large highly customizable rule set. Rules can be set to
-disabled, warning, or error. Beyond that many rules offer tight grained control such as this
-[one](http://eslint.org/docs/rules/no-cond-assign) where you can specify additional settings that
-allow use of assignment operators in conditionals if you wrap the operation with parens. Thus a binary view of rule
-settings should be avoided and the concerned coder should be willing to look at the rule page for additional
-information about the rule, it's settings, and reasoning for its utility before forming an opinion on a rule.
+## License
 
-A complete list of eslint rules can be found [here](http://eslint.org/docs/rules/). Where applicable every rule
-has a detailed explanation of the pros and cons associated with the rule, examples of the conditions under which the
-linter will act, information about additional configuration, and links to additional information about the reasoning
-for the rule if applicable. The page for [semi colon usage](http://eslint.org/docs/rules/semi) is a great example of
-eslints approach to linting rules.
-
-
-## Contributing:
-If you would like to suggest a rule change please open a pull request and provide 3-5 business days for
-people to be able to respond to your pull request and provide feedback. Due to the controversial nature of
-some linting rules we need to allow people an opportunity to voice their opinions so that we end up with the
-linting rule set we want as a team. 
+ISC
