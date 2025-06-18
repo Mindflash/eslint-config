@@ -1,23 +1,27 @@
 {
-	"name": "@mindflash-ops/eslint-config",
+  "name": "@mindflash-ops/eslint-config",
   "version": "1.0.0",
-  "description": "shared eslint config",
-  "main": "index.js",
+  "description": "Modern ESLint configuration for Node.js v22+",
+  "type": "module",
+  "main": "eslint.config.js",
+  "files": [
+    "eslint.config.js",
+    "README.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mindflash/eslint-config.git"
-  },
-  "author": "mindflash",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mindflash/eslint-config/issues"
-  },
-  "homepage": "https://github.com/Mindflash/eslint-config#readme",
   "peerDependencies": {
-    "eslint": ">= 3.9.1",
-    "eslint-plugin-import": "^2.1.0"
-  }
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "license": "ISC"
 }

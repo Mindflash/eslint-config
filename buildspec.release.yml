@@ -23,8 +23,6 @@ phases:
       # varsion based on github
       - npm version -no-git-tag-version $CODEBUILD_SOURCE_VERSION
 
-
   build:
     commands:
       - npm publish
-
