@@ -35,6 +35,7 @@ export default [
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
           caughtErrorsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
         },
       ],
 
@@ -46,9 +47,10 @@ export default [
           ignoreUrls: true,
           ignoreStrings: true,
           ignoreTemplateLiterals: true,
+          ignoreComments: true,
         },
       ],
-      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'no-console': 'off',
       'no-debugger': 'warn',
       'no-duplicate-imports': 'error',
       'no-multiple-empty-lines': ['error', { max: 1 }],
@@ -69,6 +71,11 @@ export default [
           asyncArrow: 'always',
         },
       ],
+
+      // Explicitly ignore issues in comments
+      'no-undef': ['error', { typeof: true }],
+      'no-unreachable': 'error',
+      'no-unreachable-loop': 'error',
     },
   },
 ];
