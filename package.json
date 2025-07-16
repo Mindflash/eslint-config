@@ -1,23 +1,36 @@
 {
   "name": "@mindflash-ops/eslint-config",
-  "version": "1.0.0",
-  "description": "Modern ESLint configuration for Node.js v22+",
+  "version": "2.0.0",
+  "description": "Modern ESLint configuration for latest Node.js LTS+ with essential best practices",
   "type": "module",
   "main": "eslint.config.js",
   "files": [
     "eslint.config.js",
-    "README.md"
+    "README.md",
+    ".prettierrc",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "test": "node --test",
+    "audit": "npm audit --audit-level=moderate"
   },
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "nodejs",
+    "javascript",
+    "linting",
+    "code-style"
+  ],
   "peerDependencies": {
     "@eslint/js": "^9.0.0",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n": "^17.0.0",
     "prettier": "^3.2.0"
   },
   "engines": {

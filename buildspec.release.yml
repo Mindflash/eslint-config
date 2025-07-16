@@ -1,28 +1,79 @@
-# Build instructions:
-#   - DOES NOT run linter BUT IT SHOULD
-#   - DOES NOT run dependency vulnerability scan BUT IT SHOULD
-#   - runs full test suite
-#   - runs build
-#   - Pushes package to private npm repo
-#   - changed from aws/codebuild/nodejs:8.11.0
+# Build instructions for release:
+#   - Runs linter for code quality
+#   - Runs dependency vulnerability scan
+#   - Validates ESLint configuration
+#   - Runs tests if present
+#   - Builds and publishes package to private npm repo
+#   - Uses latest Node.js LTS
 
 version: 0.2
 
 env:
+  variables:
+    NODE_ENV: 'production'
   parameter-store:
     NPM_TOKEN: /secrets/ops/us-east-1/build-pipelines/shared/npm_token
 
 phases:
   install:
+    runtime-versions:
+      nodejs: latest
     commands:
-      # install dependencies
-      - npm install
+      - echo "Installing dependencies for latest Node.js..."
+      - npm ci --prefer-offline --no-audit
 
   pre_build:
     commands:
-      # varsion based on github
-      - npm version -no-git-tag-version $CODEBUILD_SOURCE_VERSION
+      - echo "Running security and quality checks..."
+      - node --version
+      - npm --version
+
+      # Security vulnerability scan
+      - echo "Running dependency vulnerability scan..."
+      - npm audit --audit-level=moderate
+
+      # Code quality checks
+      - echo "Running linter..."
+      - npm run lint
+
+      # Format validation
+      - echo "Checking code formatting..."
+      - npm run format:check
+
+      # Configuration validation
+      - echo "Validating ESLint configuration..."
+      - node -c eslint.config.js
+
+      # Version management based on git tag
+      - echo "Setting version from git tag..."
+      - npm version --no-git-tag-version $CODEBUILD_SOURCE_VERSION
 
   build:
     commands:
+      - echo "Testing configuration with sample code..."
+      - echo 'console.log("Configuration test");' > test-validation.js
+      - npx eslint test-validation.js
+      - rm test-validation.js
+
+      # Run tests if they exist
+      - echo "Running tests if available..."
+      - if [ -f "package.json" ] && grep -q '"test"' package.json; then npm test; fi
+
+      # Publish to npm
+      - echo "Publishing package..."
       - npm publish
+
+  post_build:
+    commands:
+      - echo "Package published successfully to npm registry"
+      - echo "Published version: $(npm view @mindflash-ops/eslint-config version)"
+
+reports:
+  eslint:
+    files:
+      - 'eslint-report.json'
+    base-directory: '.'
+  npm-audit:
+    files:
+      - 'npm-audit.json'
+    base-directory: '.'

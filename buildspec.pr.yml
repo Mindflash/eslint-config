@@ -1,11 +1,44 @@
 version: 0.2
 
+env:
+  variables:
+    NODE_ENV: 'development'
+
 phases:
   install:
+    runtime-versions:
+      nodejs: latest
     commands:
+      - echo "Installing dependencies..."
+      - npm ci --prefer-offline --no-audit
 
   pre_build:
     commands:
-  
+      - echo "Running pre-build checks..."
+      - node --version
+      - npm --version
+      - echo "Running dependency audit..."
+      - npm audit --audit-level=moderate
+
   build:
     commands:
+      - echo "Running linting..."
+      - npm run lint
+      - echo "Running format check..."
+      - npm run format:check
+      - echo "Validating configuration..."
+      - node -c eslint.config.js
+      - echo "Testing configuration against sample files..."
+      - echo 'console.log("test");' > test-file.js
+      - npx eslint test-file.js
+      - rm test-file.js
+
+  post_build:
+    commands:
+      - echo "Build completed successfully"
+
+reports:
+  eslint:
+    files:
+      - 'eslint-report.json'
+    base-directory: '.'

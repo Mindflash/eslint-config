@@ -1,9 +1,14 @@
 import eslint from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import nodePlugin from 'eslint-plugin-n';
 
 export default [
   eslint.configs.recommended,
+  nodePlugin.configs['flat/recommended'],
   eslintConfigPrettier,
+  {
+    ignores: ['example.config.js'], // Reference file that imports from published package
+  },
   {
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
@@ -39,18 +44,28 @@ export default [
         },
       ],
 
+      // Node.js best practices
+      'n/no-deprecated-api': 'error',
+      'n/no-process-exit': 'error',
+      'n/no-path-concat': 'error',
+      'no-buffer-constructor': 'error',
+
+      // Additional error handling
+      'no-promise-executor-return': 'error',
+      'prefer-promise-reject-errors': 'error',
+
       // Code style and maintainability
       'max-len': [
         'error',
         {
-          code: 100,
+          code: 120,
           ignoreUrls: true,
           ignoreStrings: true,
           ignoreTemplateLiterals: true,
           ignoreComments: true,
         },
       ],
-      'no-console': 'off',
+      'no-console': 'warn',
       'no-debugger': 'warn',
       'no-duplicate-imports': 'error',
       'no-multiple-empty-lines': ['error', { max: 1 }],
@@ -76,6 +91,35 @@ export default [
       'no-undef': ['error', { typeof: true }],
       'no-unreachable': 'error',
       'no-unreachable-loop': 'error',
+
+      // Additional code quality rules
+      'eqeqeq': ['error', 'always', { null: 'ignore' }],
+      'no-eval': 'error',
+      'no-implied-eval': 'error',
+      'no-new-func': 'error',
+      'no-throw-literal': 'error',
+    },
+  },
+  {
+    files: [
+      '**/*.test.{js,mjs}',
+      '**/*.spec.{js,mjs}',
+      '**/test/**/*.{js,mjs}',
+      '**/__tests__/**/*.{js,mjs}',
+    ],
+    rules: {
+      'no-console': 'off',
+      'no-unused-vars': 'off',
+      'max-len': 'off',
+      'prefer-const': 'off',
+      'no-var': 'off',
+    },
+  },
+  {
+    files: ['*.config.{js,mjs}', 'config/**/*.{js,mjs}', 'scripts/**/*.{js,mjs}'],
+    rules: {
+      'no-console': 'off',
+      'no-unused-vars': 'off',
     },
   },
 ];

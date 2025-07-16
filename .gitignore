@@ -60,4 +60,15 @@ out/
 
 # Debug
 .debug/
-debug.log 
+debug.log
+
+# Node.js v24 specific
+.node_repl_history
+
+# Test artifacts and reports
+test-validation.js
+eslint-report.json
+npm-audit.json
+
+# Optional REPL history
+.repl_history
