@@ -4,7 +4,7 @@ Modern ESLint configuration for Node.js projects with essential best practices a
 
 ## Requirements
 
-- **Node.js** >= 22.14.0
+- **Node.js** >= 24.4.1
 - **ESLint** >= 9.0.0
 - **Prettier** >= 3.2.0
 
