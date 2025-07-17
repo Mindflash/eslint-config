@@ -4,6 +4,9 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
+# NPM configuration (created dynamically in release builds)
+.npmrc
+
 # IDE and editors
 .idea/
 .vscode/
