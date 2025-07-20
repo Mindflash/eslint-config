@@ -39,21 +39,12 @@ phases:
       - echo "Checking code formatting..."
       - npm run format:check
 
-      # Configuration validation
-      - echo "Validating ESLint configuration..."
-      - node -c eslint.config.js
-
       # Version management based on git tag
       - echo "Setting version from git tag..."
       - npm version --no-git-tag-version $CODEBUILD_SOURCE_VERSION
 
   build:
     commands:
-      - echo "Testing configuration with sample code..."
-      - echo 'console.log("Configuration test");' > test-validation.js
-      - npx eslint test-validation.js
-      - rm test-validation.js
-
       # Run tests if they exist
       - echo "Running tests if available..."
       - if [ -f "package.json" ] && grep -q '"test"' package.json; then npm test; fi

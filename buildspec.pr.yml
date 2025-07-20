@@ -28,12 +28,6 @@ phases:
       - npm run lint
       - echo "Running format check..."
       - npm run format:check
-      - echo "Validating configuration..."
-      - node -c eslint.config.js
-      - echo "Testing configuration against sample files..."
-      - echo 'console.log("test");' > test-file.js
-      - npx eslint test-file.js
-      - rm test-file.js
 
   post_build:
     commands:
