@@ -22,7 +22,6 @@ phases:
       - echo "Installing dependencies for latest Node.js..."
       - echo "Creating .npmrc for authenticated access..."
       - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - npm install -g npm@latest
       - npm i
 
   pre_build:
