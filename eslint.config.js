@@ -93,7 +93,7 @@ export default [
       'no-unreachable-loop': 'error',
 
       // Additional code quality rules
-      'eqeqeq': ['error', 'always', { null: 'ignore' }],
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
       'no-eval': 'error',
       'no-implied-eval': 'error',
       'no-new-func': 'error',
