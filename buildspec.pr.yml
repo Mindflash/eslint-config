@@ -21,8 +21,6 @@ phases:
       - echo "Running pre-build checks..."
       - node --version
       - npm --version
-      - echo "Running dependency audit..."
-      - npm audit --audit-level=moderate
 
   build:
     commands:

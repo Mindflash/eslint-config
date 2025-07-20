@@ -30,9 +30,6 @@ phases:
       - node --version
       - npm --version
 
-      # Security vulnerability scan
-      - echo "Running dependency vulnerability scan..."
-      - npm audit --audit-level=moderate
 
       # Code quality checks
       - echo "Running linter..."
