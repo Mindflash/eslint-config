@@ -24,6 +24,7 @@ phases:
 
   build:
     commands:
+      - npm i
       - echo "Running linting..."
       - npm run lint
       - echo "Running format check..."

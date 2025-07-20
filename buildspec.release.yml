@@ -29,7 +29,7 @@ phases:
       - echo "Running security and quality checks..."
       - node --version
       - npm --version
-
+      - npm i
 
       # Code quality checks
       - echo "Running linter..."
