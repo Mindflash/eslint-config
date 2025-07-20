@@ -12,13 +12,10 @@ phases:
       nodejs: latest
     commands:
       - echo "Installing dependencies..."
-      - echo "Setting npm registry to use HTTPS..."
-      - npm config set registry https://registry.npmjs.org/
       - echo "Creating .npmrc for authenticated access..."
       - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - cat .npmrc
       - npm install -g npm@latest
-      - npm ci --prefer-offline --no-audit
+      - npm i
 
   pre_build:
     commands:
