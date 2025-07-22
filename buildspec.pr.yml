@@ -11,7 +11,7 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      - echo "=== DEBUG: Install Phase Started ==="
+      - echo "=== DEBUG Install Phase Started ==="
       - echo "Node.js version:"
       - node --version
       - echo "npm version:"
@@ -31,12 +31,12 @@ phases:
 
   build:
     commands:
-      - echo "=== DEBUG: Build Phase Started ==="
+      - echo "=== DEBUG Build Phase Started ==="
       - echo "Running lint..."
       - npm run lint
-      - echo "=== DEBUG: Build Phase Completed ==="
+      - echo "=== DEBUG Build Phase Completed ==="
 
   post_build:
     commands:
-      - echo "=== DEBUG: Post-build Phase ==="
+      - echo "=== DEBUG Post-build Phase ==="
       - echo "Build completed successfully"
