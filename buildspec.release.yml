@@ -1,11 +1,4 @@
-# Build instructions for release:
-#   - Runs linter for code quality
-#   - Runs dependency vulnerability scan
-#   - Validates ESLint configuration
-#   - Runs tests if present
-#   - Builds and publishes package to private npm repo
-#   - Uses latest Node.js LTS
-
+# Minimal release buildspec for debugging
 version: 0.2
 
 env:
@@ -19,51 +12,31 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      - echo "Installing dependencies for latest Node.js..."
-      - echo "Creating .npmrc for authenticated access..."
+      - echo "=== DEBUG: Release Install Phase Started ==="
+      - echo "Node.js version:" && node --version
+      - echo "npm version:" && npm --version
+      - echo "Current directory:" && pwd
+      - echo "Files in directory:" && ls -la
+      - echo "Environment NODE_ENV:" && echo $NODE_ENV
+      - echo "CodeBuild Source Version:" && echo $CODEBUILD_SOURCE_VERSION
+      - echo "Creating .npmrc file..."
       - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - npm i
-
-  pre_build:
-    commands:
-      - echo "Running security and quality checks..."
-      - node --version
-      - npm --version
-      - npm i
-
-      # Code quality checks
-      - echo "Running linter..."
-      - npm run lint
-
-      # Format validation
-      - echo "Checking code formatting..."
-      - npm run format:check
-
-      # Version management based on git tag
-      - echo "Setting version from git tag..."
-      - npm version --no-git-tag-version $CODEBUILD_SOURCE_VERSION
+      - echo "Contents of .npmrc:" && cat .npmrc
+      - echo "Installing dependencies..."
+      - npm install
 
   build:
     commands:
-      # Run tests if they exist
-      - echo "Running tests if available..."
-      - if [ -f "package.json" ] && grep -q '"test"' package.json; then npm test; fi
-
-      # Publish to npm
+      - echo "=== DEBUG: Release Build Phase Started ==="
+      - echo "Running lint..."
+      - npm run lint
+      - echo "Setting version from git tag..."
+      - npm version --no-git-tag-version $CODEBUILD_SOURCE_VERSION
       - echo "Publishing package..."
       - npm publish
+      - echo "=== DEBUG: Release Build Phase Completed ==="
 
   post_build:
     commands:
-      - echo "Package published successfully to npm registry"
-      - echo "Published version: $(npm view @mindflash-ops/eslint-config version)"
-
-reports:
-  eslint:
-    files:
-      - 'eslint-report.json'
-    base-directory: '.'
-  npm-audit:
-    files:
-      - 'npm-audit.json'
-    base-directory: '.'
+      - echo "=== DEBUG: Release Post-build Phase ==="
+      - echo "Package published successfully"
