@@ -6,6 +6,10 @@
 *.log
 .DS_Store
 
+# Build and CI files
+buildspec*.yml
+.npmrc
+
 # Config files
 .prettierrc
 .prettierignore
@@ -23,3 +27,7 @@ __tests__/
 *.test.js
 *.spec.js
 coverage/
+
+# Documentation development files
+docs/
+examples/

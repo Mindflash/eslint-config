@@ -1,4 +1,3 @@
-# Minimal release buildspec for debugging
 version: 0.2
 
 env:
@@ -12,38 +11,21 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      - echo "=== DEBUG Release Install Phase Started ==="
-      - echo "Node.js version:"
-      - node --version
-      - echo "npm version:"
-      - npm --version
-      - echo "Current directory:"
-      - pwd
-      - echo "Files in directory:"
-      - ls -la
-      - echo "Environment NODE_ENV:"
-      - echo $NODE_ENV
-      - echo "CodeBuild Source Version:"
-      - echo $CODEBUILD_SOURCE_VERSION
-      - echo "Creating .npmrc file..."
-      - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - echo "Contents of .npmrc:"
-      - cat .npmrc
       - echo "Installing dependencies..."
-      - npm install
+      - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - npm ci
 
   build:
     commands:
-      - echo "=== DEBUG Release Build Phase Started ==="
       - echo "Running lint..."
       - npm run lint
+      - echo "Running format check..."
+      - npm run format:check
       - echo "Setting version from git tag..."
       - npm version --no-git-tag-version $CODEBUILD_SOURCE_VERSION
       - echo "Publishing package..."
       - npm publish
-      - echo "=== DEBUG Release Build Phase Completed ==="
 
   post_build:
     commands:
-      - echo "=== DEBUG Release Post-build Phase ==="
       - echo "Package published successfully"

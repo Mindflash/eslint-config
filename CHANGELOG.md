@@ -5,11 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [2.0.0] - 2025-07-15
+## [2.0.0] - 2025-07-23
 
 ### Added
 
-- 🚀 **Latest Node.js LTS+ support** - Updated minimum Node.js version to v22.13.1 with forward compatibility
+- 🚀 **Latest Node.js LTS+ support** - Updated minimum Node.js version to v22.13.1
 - 📦 **Node.js plugin** - Added `eslint-plugin-n` for Node.js specific best practices and deprecation detection
 - 🧪 **Test-specific configuration** - Relaxed rules for test files (`*.test.js`, `*.spec.js`)
 - ⚙️ **Config file flexibility** - Special rules for configuration files (`*.config.js`, `config/**`)
