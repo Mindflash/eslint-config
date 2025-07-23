@@ -10,6 +10,12 @@ export default [
     ignores: ['example.config.js'], // Reference file that imports from published package
   },
   {
+    files: ['eslint.config.js'],
+    rules: {
+      'n/no-unpublished-import': 'off', // Allow importing devDependencies in config file
+    },
+  },
+  {
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
       ecmaVersion: 'latest',
