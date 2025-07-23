@@ -13,7 +13,7 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
-      - npm ci
+      - npm install
 
   build:
     commands:
