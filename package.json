@@ -34,7 +34,7 @@
     "prettier": "^3.2.0"
   },
   "engines": {
-    "node": ">=24.4.1"
+    "node": ">=22.13.1"
   },
   "license": "ISC"
 }
