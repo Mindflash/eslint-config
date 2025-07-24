@@ -1,7 +1,33 @@
-.DS_Store
-dist/*
-*.iml
+# Development files
+.git/
+.github/
+.vscode/
+.idea/
 *.log
-node_modules
-*.yml
-doc
+.DS_Store
+
+# Build and CI files
+buildspec*.yml
+.npmrc
+
+# Config files
+.prettierrc
+.prettierignore
+.eslintrc*
+.eslintignore
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Test files
+__tests__/
+*.test.js
+*.spec.js
+coverage/
+
+# Documentation development files
+docs/
+examples/

@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    NODE_ENV: 'production'
+    NODE_ENV: 'development'
   parameter-store:
     NPM_TOKEN: /secrets/ops/us-east-1/build-pipelines/shared/npm_token
 
@@ -20,11 +20,7 @@ phases:
       - npm run lint
       - echo "Running format check..."
       - npm run format:check
-      - echo "Setting version from git tag..."
-      - npm version --no-git-tag-version $CODEBUILD_SOURCE_VERSION
-      - echo "Publishing package..."
-      - npm publish
 
   post_build:
     commands:
-      - echo "Package published successfully"
+      - echo "Build completed successfully"

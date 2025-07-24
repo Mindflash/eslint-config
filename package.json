@@ -1,23 +1,40 @@
 {
-	"name": "@mindflash-ops/eslint-config",
-  "version": "1.0.0",
-  "description": "shared eslint config",
-  "main": "index.js",
+  "name": "@mindflash-ops/eslint-config",
+  "version": "2.0.0",
+  "description": "Modern ESLint configuration for latest Node.js LTS+ with essential best practices",
+  "type": "module",
+  "main": "eslint.config.js",
+  "files": [
+    "eslint.config.js",
+    "README.md",
+    ".prettierrc",
+    "CHANGELOG.md"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "node --test",
+    "audit": "npm audit --audit-level=moderate"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Mindflash/eslint-config.git"
+  "keywords": [
+    "eslint",
+    "eslint-config",
+    "nodejs",
+    "javascript",
+    "linting",
+    "code-style"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-n": "^17.0.0",
+    "prettier": "^3.2.0"
   },
-  "author": "mindflash",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Mindflash/eslint-config/issues"
+  "engines": {
+    "node": ">=22.13.1"
   },
-  "homepage": "https://github.com/Mindflash/eslint-config#readme",
-  "peerDependencies": {
-    "eslint": ">= 3.9.1",
-    "eslint-plugin-import": "^2.1.0"
-  }
+  "license": "ISC"
 }

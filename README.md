@@ -1,42 +1,110 @@
-# eslint-config
-Golden Path linting rules for a brighter tomorrow.
+# @mindflash-ops/eslint-config
 
-Shared Mindflash Javascript [eslint](http://eslint.org) config
+Modern ESLint configuration for Node.js projects with essential best practices and future-proofing.
 
-### Add to an existing project
+## Requirements
 
-Add package:
-`npm install --save-dev git+ssh://git@github.com:Mindflash/eslint-config.git`
+- **Node.js** >= 22.13.1
+- **ESLint** >= 9.0.0
+- **Prettier** >= 3.2.0
 
-Add a .eslintrc file to the root of your project:
+## Features
 
+- 🚀 **ESLint v9 flat config** - Future-proof configuration format
+- 🌟 **Latest ECMAScript features** - Automatically supports new JS features
+- 📦 **Essential Node.js patterns** - Critical deprecation detection
+- 🔧 **Auto-fixable rules** - Most issues can be automatically resolved
+- 🎨 **Prettier integration** - Seamless code formatting
+- 🧪 **Test & config friendly** - Relaxed rules for test and config files
+
+## Included Plugins
+
+- **@eslint/js** - Core ESLint recommended rules
+- **eslint-plugin-n** - Node.js specific best practices
+- **eslint-config-prettier** - Prettier compatibility
+
+## Installation
+
+```sh
+npm install --save-dev @mindflash-ops/eslint-config @eslint/js eslint eslint-config-prettier eslint-plugin-n prettier
 ```
+
+## Usage
+
+Create an `eslint.config.js` file in your project root:
+
+```js
+import sharedConfig from '@mindflash-ops/eslint-config/eslint.config.js';
+
+export default [
+  ...sharedConfig,
+  // Add your custom rules here if needed
+  {
+    rules: {
+      // Custom overrides
+    },
+  },
+];
+```
+
+### Package Scripts
+
+Add these scripts to your `package.json`:
+
+```json
 {
-	"extends": "mindflash"
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  }
 }
 ```
 
-### Full workflow setup
-COMING SOON
+## Configuration Details
 
+### Modern JavaScript
 
-## A note on eslint:
-eslint is a very powerful tool that offers a large highly customizable rule set. Rules can be set to
-disabled, warning, or error. Beyond that many rules offer tight grained control such as this
-[one](http://eslint.org/docs/rules/no-cond-assign) where you can specify additional settings that
-allow use of assignment operators in conditionals if you wrap the operation with parens. Thus a binary view of rule
-settings should be avoided and the concerned coder should be willing to look at the rule page for additional
-information about the rule, it's settings, and reasoning for its utility before forming an opinion on a rule.
+- `no-var`, `prefer-const`, `prefer-template` (warnings) - Encourages modern syntax
+- `no-duplicate-imports` (error) - Cleaner imports
 
-A complete list of eslint rules can be found [here](http://eslint.org/docs/rules/). Where applicable every rule
-has a detailed explanation of the pros and cons associated with the rule, examples of the conditions under which the
-linter will act, information about additional configuration, and links to additional information about the reasoning
-for the rule if applicable. The page for [semi colon usage](http://eslint.org/docs/rules/semi) is a great example of
-eslints approach to linting rules.
+### Node.js Best Practices
 
+- `n/no-deprecated-api` (error) - Prevents breaking changes
+- `no-buffer-constructor` (error) - Use `Buffer.from()` instead
 
-## Contributing:
-If you would like to suggest a rule change please open a pull request and provide 3-5 business days for
-people to be able to respond to your pull request and provide feedback. Due to the controversial nature of
-some linting rules we need to allow people an opportunity to voice their opinions so that we end up with the
-linting rule set we want as a team. 
+### Code Quality
+
+- `eqeqeq`, `no-return-await` (errors) - Prevents bugs and performance issues
+- `require-await`, `no-unused-vars`, `max-len` (warnings) - Code cleanliness
+
+### Code Style
+
+- `semi`, `quotes`, `comma-dangle` (auto-fixable errors) - Consistent formatting
+- `no-console` allowed - Common in Node.js development
+
+## File-Specific Rules
+
+### Test Files (`*.test.js`, `*.spec.js`)
+
+- Very relaxed rules to not interfere with testing patterns
+- Console usage allowed
+- Unused variables allowed
+
+### Configuration Files (`*.config.js`, `config/**`)
+
+- Console usage allowed
+- Unused variables allowed for configuration flexibility
+
+## Future-Proof Design
+
+This configuration automatically adapts to new Node.js and JavaScript features:
+
+- **`ecmaVersion: 'latest'`** - Always uses newest JavaScript features
+- **Node.js deprecation detection** - Automatically flags deprecated APIs
+- **Stable dependency ranges** - Won't break with minor updates
+
+## License
+
+ISC
