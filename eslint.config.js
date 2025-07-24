@@ -7,7 +7,41 @@ export default [
   nodePlugin.configs['flat/recommended'],
   eslintConfigPrettier,
   {
-    ignores: ['example.config.js'], // Reference file that imports from published package
+    ignores: [
+      // Dependencies
+      '**/node_modules/**',
+      '**/package-lock.json',
+      '**/yarn.lock',
+      '**/pnpm-lock.yaml',
+
+      // Build output
+      '**/dist/**',
+      '**/build/**',
+      '**/coverage/**',
+
+      // Logs
+      '**/*.log',
+      '**/npm-debug.log*',
+      '**/yarn-debug.log*',
+      '**/yarn-error.log*',
+
+      // Environment variables
+      '**/.env',
+      '**/.env.*',
+
+      // IDE
+      '**/.idea/**',
+      '**/.vscode/**',
+      '**/*.swp',
+      '**/*.swo',
+
+      // OS
+      '**/.DS_Store',
+      '**/Thumbs.db',
+
+      // Reference file that imports from published package
+      'example.config.js',
+    ],
   },
   {
     files: ['eslint.config.js'],
