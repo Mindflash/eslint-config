@@ -12,7 +12,7 @@ phases:
       nodejs: latest
     commands:
       - echo "Installing dependencies..."
-      - npm install
+      - npm install --include=dev
 
   build:
     commands:
